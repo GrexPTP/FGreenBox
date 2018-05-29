@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "170885212883",
+    "firebase_url": "https://f-green-box.firebaseio.com",
+    "project_id": "f-green-box",
+    "storage_bucket": "f-green-box.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170885212883:android:cdc59bf717860bc2",
+        "android_client_info": {
+          "package_name": "com.codergang.android.f_greenbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170885212883-upi9lf7tbs37gtdc0ceeb8ue7sl38th5.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "170885212883-upi9lf7tbs37gtdc0ceeb8ue7sl38th5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaYjd0zVpxFkm5DbvApuN7maubYocDWEg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">F-GreenBox</string>
+    <string name="tradition_title">Truyền Thống</string>
+    <string name="hydroponics_title">Thủy Canh</string>
+    <string name="temperature_soil">Nhiệt Độ:</string>
+    <string name="humidity_soil">Độ Ẩm:</string>
+    <string name="case_one">Khây 1</string>
+    <string name="case_two">Khây 2</string>
+    <string name="case_three">Khây 3</string>
+    <string name="water_button">Tưới Nước</string>
+    <string name="warm_button">Sưởi Ấm</string>
+    <string name="cool_down_button">Tản Nhiệt</string>
+    <string name="led_light">Đèn Led</string>
+    <string name="case_selector">Chọn số của khây:</string>
+    <string name="temperature_hydroponics">Nhiệt Độ:</string>
+    <string name="ph_hydroponics">pH:</string>
+    <string name="action_settings">Thiết Lập</string>
+    <string name="error">Lỗi!</string>
+    <string name="loading">Đang tải...</string>
+</resources>
