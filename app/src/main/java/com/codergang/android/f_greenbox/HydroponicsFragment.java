@@ -134,6 +134,19 @@ public class HydroponicsFragment extends Fragment {
             }
         });
         ledLightSwitch = v.findViewById(R.id.led_light);
+        led.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                boolean state = (boolean) dataSnapshot.getValue();
+                ledLightSwitch.setChecked(state);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
         ledLightSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

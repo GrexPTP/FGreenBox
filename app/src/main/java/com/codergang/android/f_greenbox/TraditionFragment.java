@@ -82,6 +82,7 @@ public class TraditionFragment extends Fragment {
     public Switch ledLightSwitch;
     public TextView tempTrad;
     public TextView humidTrad;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +90,7 @@ public class TraditionFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -135,6 +137,20 @@ public class TraditionFragment extends Fragment {
             }
         });
         ledLightSwitch = v.findViewById(R.id.led_light);
+        led.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                boolean state = (boolean) dataSnapshot.getValue();
+                ledLightSwitch.setChecked(state);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         ledLightSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
