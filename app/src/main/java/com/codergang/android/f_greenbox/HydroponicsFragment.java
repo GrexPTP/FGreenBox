@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -72,6 +73,7 @@ public class HydroponicsFragment extends Fragment {
 
 
     public RadioGroup caseGroup;
+    public RadioButton button3;
     public Switch coolDownSwitch;
     public Switch warmSwitch;
     public Switch waterSwitch;
@@ -96,6 +98,7 @@ public class HydroponicsFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_hydroponics, container, false);
         caseGroup = v.findViewById(R.id.case_group);
+        caseGroup.check(R.id.case_1);
         caseGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -112,6 +115,8 @@ public class HydroponicsFragment extends Fragment {
                 }
             }
         });
+        button3 = v.findViewById(R.id.case_3);
+        button3.setEnabled(false);
         coolDownSwitch = v.findViewById(R.id.cool_down_button);
         isCoolDown.addValueEventListener(new ValueEventListener() {
             @Override
