@@ -72,9 +72,9 @@ public class HydroponicsFragment extends Fragment {
 
 
     public RadioGroup caseGroup;
-    public Button coolDownButton;
-    public Button warmButton;
-    public Button waterButton;
+    public Switch coolDownSwitch;
+    public Switch warmSwitch;
+    public Switch waterSwitch;
     public Switch ledLightSwitch;
     public TextView tempHydro;
     public TextView pHText;
@@ -112,25 +112,64 @@ public class HydroponicsFragment extends Fragment {
                 }
             }
         });
-        coolDownButton = v.findViewById(R.id.cool_down_button);
-        coolDownButton.setOnClickListener(new View.OnClickListener() {
+        coolDownSwitch = v.findViewById(R.id.cool_down_button);
+        isCoolDown.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                isCoolDown.setValue(true);
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                boolean state = (boolean) dataSnapshot.getValue();
+                coolDownSwitch.setChecked(state);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
-        warmButton = v.findViewById(R.id.warm_button);
-        warmButton.setOnClickListener(new View.OnClickListener() {
+        coolDownSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                isWarm.setValue(true);
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                isCoolDown.setValue(isChecked);
             }
         });
-        waterButton = v.findViewById(R.id.water_button);
-        waterButton.setOnClickListener(new View.OnClickListener() {
+        warmSwitch = v.findViewById(R.id.warm_button);
+        isWarm.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                isWater.setValue(true);
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                boolean state = (boolean) dataSnapshot.getValue();
+                warmSwitch.setChecked(state);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        warmSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                isWarm.setValue(isChecked);
+            }
+        });
+        waterSwitch = v.findViewById(R.id.water_button);
+        isWater.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                boolean state = (boolean) dataSnapshot.getValue();
+                waterSwitch.setChecked(state);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        waterSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                isWater.setValue(isChecked);
             }
         });
         ledLightSwitch = v.findViewById(R.id.led_light);
@@ -164,7 +203,7 @@ public class HydroponicsFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String temp = dataSnapshot.getValue(String.class);
-                tempHydro.setText(temp);
+                tempHydro.setText(temp + " °C");
             }
 
             @Override
